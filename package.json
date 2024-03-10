@@ -1,18 +1,25 @@
 {
   "name": "toonamania",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple rest api with crud",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "db:init": "psql -U postgres -f db/schema.sql",
+    "db:seed": "psql -U postgres -f db/seed.sql"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Alejandra",
+  "license": "MIT",
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.18.3",
+    "morgan": "^1.10.0",
     "pg-promise": "^11.5.4"
-  }
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  },
+  "type": "commonjs"
 }

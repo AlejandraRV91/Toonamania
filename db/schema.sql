@@ -1,16 +1,19 @@
-DROP DATABASE IF EXISTS toonamania;
+-- deletes the previous database
+DROP DATABASE IF EVENT toonamania;
 
+-- creates a new one
 CREATE DATABASE toonamania;
 
-\c toonamania;
+-- conect the DB we just created
+\c toonamania
 
 CREATE TABLE
     characters (
         id SERIAL PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
+        name VARCHAR(100) NOT NULL,
         age INTEGER,
         image TEXT,
         description TEXT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
         updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    )
+    );
