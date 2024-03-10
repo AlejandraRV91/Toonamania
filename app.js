@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 });
 
 app.use((req, res) => {
-	res.status(404).json({ error: "hey, there's a error in your requets}" });
+	res.status(404).json({ error: "hey, there's a error in your requets" });
 });
 
 module.exports = app;
