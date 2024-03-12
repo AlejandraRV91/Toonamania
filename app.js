@@ -13,12 +13,12 @@ app.use("/character", characterController)
 
 app.get("/", (req, res) => {
 	res.status(200).json({
-		message: "Hola, este es el inicio de la api",
+		message: "Hi, this is the API's beginning",
 	});
 });
 
 app.use((req, res) => {
-	res.status(404).json({ error: "hey, there's a error in your requets" });
+	res.status(404).json({ error: "hey, there's an error in your request" });
 });
 
 module.exports = app;

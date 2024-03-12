@@ -1,5 +1,5 @@
 -- deletes the previous database
-DROP DATABASE IF EVENT toonamania;
+DROP DATABASE IF EXISTS toonamania;
 
 -- creates a new one
 CREATE DATABASE toonamania;
