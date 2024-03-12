@@ -9,7 +9,7 @@ app.use(cors());
 app.use(express.json())
 app.use(morgan("dev"));
 
-app.use("/character", characterController)
+app.use("/characters", characterController)
 
 app.get("/", (req, res) => {
 	res.status(200).json({
