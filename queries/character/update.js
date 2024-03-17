@@ -14,29 +14,5 @@ async function updateCharacter(id, name, age, image, desc) {
         };
 	}
 }
-async function updateCharacterPatch(id, name, age, image, desc) {
-    try {
-        const fieldsToUpdate = [];
-        if (name) fieldsToUpdate.push(`name = '${name}'`);
-        if (age) fieldsToUpdate.push(`age = ${age}`);
-        if (image) fieldsToUpdate.push(`image = '${image}'`);
-        if (desc) fieldsToUpdate.push(`description = '${desc}'`);
 
-        const updateQuery = `
-            UPDATE characters
-            SET ${fieldsToUpdate.join(', ')}
-            WHERE id = $1
-        `;
-
-        await DBConection.result(updateQuery, [id]);
-        return true;
-    } catch (error) {
-        console.log("Error", error);
-        return {
-            error: error.message
-        };
-    }
-}
-
-
-module.exports = { updateCharacter, updateCharacterPatch };
+module.exports = { updateCharacter };

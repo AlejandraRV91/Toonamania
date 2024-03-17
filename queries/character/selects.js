@@ -39,29 +39,7 @@ async function getCharacterByID(id) {
 	}
 }
 
-// get character by name
-async function getCharacterByName(name) {
-	try {
-		const character = await DBConection.manyOrNone(
-			"SELECT * FROM characters WHERE name=$1",
-			[name]
-		);
-
-		if (character && character.length > 0) {
-			return character;
-		} else {
-			throw new Error("No characters found with that name");
-		}
-	} catch (error) {
-		console.log("Error", error);
-		return {
-			error: error.message
-		};
-	}
-}
-
 module.exports = {
 	getAllCharacters,
 	getCharacterByID,
-	getCharacterByName,
 };
